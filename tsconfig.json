@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "ESNext",
+      "DOM",
+    ],
+    "module": "ESNext",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "paths": {
+      "@swivel-finance/connect": ["src/index.ts"],
+      "@swivel-finance/connect/*": ["src/*"],
+    },
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+}

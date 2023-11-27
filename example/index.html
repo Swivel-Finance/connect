@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Wallet Connection</title>
+  <meta name="description" content="Connect wallets to your dapp.">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3367D6">
+
+  <meta property="og:title" content="Wallet Connection">
+  <meta property="og:description" content="Connect wallets to your dapp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <h1>Wallet Connection</h1>
+
+  <wallet-element></wallet-element>
+
+  <noscript>
+    <h1>JavaScript disabled</h1>
+    <p>You need to enable JavaScript in order to run this web application.</p>
+  </noscript>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "ethers": "/node_modules/ethers/dist/ethers.esm.js",
+        "@swivel-finance/connect": "/dist/src/index.js",
+        "@swivel-finance/connect/": "/dist/src/"
+      }
+    }
+  </script>
+
+  <script src="../dist/example/src/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{
+  "name": "@swivel-finance/connect",
+  "version": "0.0.1",
+  "description": "A flexible web3 connection service for swivel frontends and node scripting environments.",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "author": "Alexander Wende",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swivel-Finance/connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Swivel-Finance/connect/issues"
+  },
+  "homepage": "https://github.com/Swivel-Finance/connect#readme",
+  "scripts": {
+    "clean": "shx rm -rf ./dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "build:watch": "npm run build -- --watch",
+    "lint": "eslint src/ example/",
+    "lint:fix": "npm run lint -- --fix",
+    "prerelease": "npm-run-all clean lint build css:prod",
+    "release": "commit-and-tag-version",
+    "release:minor": "npm run release -- --release-as minor",
+    "release:major": "npm run release -- --release-as major",
+    "release:dry": "npm run release -- --dry-run",
+    "release:publish": "git push --follow-tags origin main && npm run pub",
+    "pub": "npm publish ./dist/src --access public",
+    "prepub": "shx cp ./package.json ./README.md ./LICENSE ./dist/src",
+    "postpub": "shx rm ./dist/src/package.json ./dist/src/README.md ./dist/src/LICENSE",
+    "pack": "npm run prepub && npm pack ./dist/src && npm run postpub"
+  },
+  "devDependencies": {
+    "@swivel-finance/eslint-config": "^0.2.1",
+    "commit-and-tag-version": "^12.0.0",
+    "eslint": "^8.54.0",
+    "ethers": "^5.7.2",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2"
+  },
+  "peerDependencies": {
+    "ethers": "^5.7.2"
+  }
+}

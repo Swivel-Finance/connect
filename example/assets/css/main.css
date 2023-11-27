@@ -1,0 +1,18 @@
+@import './base.css';
+@import './wallet-list.css';
+
+button {
+  padding-block: var(--grid-size);
+  padding-inline: calc(var(--grid-size) * 2);
+  color: var(--color-action-fg);
+  cursor: pointer;
+  font-weight: bold;
+  background: var(--color-action-bg);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+button:is([disabled], [aria-disabled=true]) {
+  --color-action-bg: var(--color-action-disabled-bg);
+  cursor: not-allowed;
+}
