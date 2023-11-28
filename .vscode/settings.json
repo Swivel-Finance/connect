@@ -1,0 +1,7 @@
+{
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+    "typescript.preferences.importModuleSpecifierEnding": "js",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.importModuleSpecifierEnding": "js",
+    "javascript.preferences.importModuleSpecifier": "relative"
+}

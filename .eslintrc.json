@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "extends": [
+    "@swivel-finance"
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "*.js"
+  ],
+  "rules": {
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "never",
+        "pathGroups": [
+          {
+            "pattern": "@swivel-finance/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "distinctGroup": false
+      }
+    ]
+  }
+}
