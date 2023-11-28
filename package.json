@@ -22,7 +22,7 @@
     "build:watch": "npm run build -- --watch",
     "lint": "eslint src/ example/",
     "lint:fix": "npm run lint -- --fix",
-    "prerelease": "npm-run-all clean lint build css:prod",
+    "prerelease": "npm-run-all clean lint build",
     "release": "commit-and-tag-version",
     "release:minor": "npm run release -- --release-as minor",
     "release:major": "npm run release -- --release-as major",
