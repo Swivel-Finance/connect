@@ -1,4 +1,4 @@
-import { providers } from 'ethers';
+import { providers, utils } from 'ethers';
 import { ListenerManager, schedule } from '../../../utils/index.js';
 import { ERRORS } from '../../errors.js';
 import { CONNECTION_EVENTS, type Account, type ConnectionEvents, type ConnectionProvider } from '../../interfaces.js';
@@ -101,6 +101,9 @@ export class BrowserConnectionProvider implements ConnectionProvider {
 
         // lookup ens names for connected accounts
         const accounts = await Promise.all<Account>(addresses.map(async (address) => {
+            // checksum the address
+            address = utils.getAddress(address);
+            // lookup the ens name for the address
             const ensAddress = await provider.lookupAddress(address)
                 .catch((error) => {
                     console.warn(`ENS lookup failed for ${ address }: `, error);

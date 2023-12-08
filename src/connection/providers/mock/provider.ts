@@ -1,6 +1,6 @@
 import { Provider } from '@ethersproject/abstract-provider';
 import { Signer } from '@ethersproject/abstract-signer';
-import { BigNumber } from 'ethers';
+import { BigNumber, utils } from 'ethers';
 import { ListenerManager, schedule } from '../../../utils/index.js';
 import { CONNECTION_EVENTS, type ConnectionEvents, type ConnectionProvider } from '../../interfaces.js';
 import { DEFAULT_CONNECTION_OPTIONS, MockConnection, MockConnectionOptions } from './connection.js';
@@ -79,7 +79,8 @@ export class MockConnectionProvider implements ConnectionProvider {
                 name: connectionOptions.networkName,
             },
             account: {
-                address: connectionOptions.address,
+                // ensure address is checksummed
+                address: utils.getAddress(connectionOptions.address),
                 ensAddress: connectionOptions.ensAddress,
             },
             provider,
