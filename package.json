@@ -1,6 +1,6 @@
 {
   "name": "@swivel-finance/connect",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A flexible web3 connection service for swivel frontends and node scripting environments.",
   "type": "module",
   "main": "index.js",
