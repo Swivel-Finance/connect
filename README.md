@@ -35,4 +35,4 @@ const walletService = new WalletService({
 const connection = await walletService.connect();
 ```
 
-See more examples in the [examples](./examples) directory.
+See more examples in the [examples](./example) directory.
